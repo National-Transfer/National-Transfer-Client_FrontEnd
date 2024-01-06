@@ -1,0 +1,70 @@
+.single-slide {
+    margin: 40px;
+    height: 600px;
+    padding-bottom: 20px;
+    /* background-color: burlywood; */
+}
+
+.row {
+    column-gap: 100px;
+    height: 100%;
+    margin: 5px;
+}
+
+.firstPart {
+    margin: 20px 5px;
+    opacity: 1;
+}
+
+.span-turquoise {
+    color: #008995;
+}
+
+.firstPart h1 {
+    font-family: Catamaran,sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.1;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 20px 3px;
+}
+
+.inter.text-size-medium {
+    text-align: left;
+}
+.inter {
+    font-family: Inter,sans-serif;
+}
+.text-size-medium {
+    font-size: 1.5rem;
+}
+
+.subtext-row {
+    flex-flow: wrap;
+    align-items: center;
+    display: flex;
+}
+.subtext-container {
+    margin-top: 1rem;
+    margin-right: 2rem;
+    flex-direction: row;
+    align-items: center;
+    display: flex;
+    color: #90b1b4;
+}
+.check {
+    height: 40px;
+    width: 40px;
+    margin-right: 0.75rem;
+    vertical-align: middle;
+}
+
+.bg-img {
+    background-image: url("../../assets/images/Money-transfer_001_02.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 20px 0;
+}

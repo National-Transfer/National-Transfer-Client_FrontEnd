@@ -1,0 +1,15 @@
+<div class="statistics">
+    <div class="heading-large">
+        <h2>The story of a Moroccan Fintech 🚀 </h2>
+    </div>
+    <div class="row align-items-center mt-70">
+        @for (icon of icons; track icon.id) {
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="icon">
+                <h3><span class="counter">{{icon.counter}}</span></h3>
+                <h6>{{icon.desc}}</h6>
+            </div>
+        </div>
+        }
+    </div>
+</div>

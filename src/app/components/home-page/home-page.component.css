@@ -1,0 +1,151 @@
+/* .heading-large {
+    opacity: 1;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 60px 40px;
+}
+
+h2 {
+    font-family: Catamaran,sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    line-height: 36px;
+    margin: 20px 20px 0;
+    color: #008995;
+}
+
+.services-grid {
+    grid-column-gap: 2rem;
+    grid-row-gap: 1.5rem;
+    grid-template-rows: auto;
+    grid-auto-columns: 1fr;
+    display: grid;
+    margin: 40px 80px;
+    grid-template-columns:repeat(3,1fr);
+}
+
+.services-grid :nth-child(4n + 1),
+.services-grid :nth-child(4n + 4){
+  grid-column: span 2;
+}
+
+.service-content {
+    opacity: 1;
+    background-image: linear-gradient(255deg,#b3dcdf,#e5f3f4);
+    border-radius: 5px;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem 2rem 1rem;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+}
+
+.block-quote.quote-turquoise {
+    border-left-color: #008995;
+}
+.block-quote {
+    font-family: Inter,sans-serif;
+}
+blockquote {
+    border-left: 0.25rem solid #e2e2e2;
+    margin-bottom: 0;
+    padding: 0.75rem 1.25rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    margin: 0 0 10px;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 40px;
+    margin-inline-end: 40px;
+}
+.button-row {
+    flex-wrap: wrap;
+    align-items: center;
+    display: flex;
+}
+.button-secondary {
+    z-index: 999;
+    border: 0.125rem solid #008995;
+    color: #008995;
+    text-align: center;
+    cursor: pointer;
+    background-color: transparent;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 1.25rem;
+    font-family: Inter,sans-serif;
+    font-weight: 600;
+    transition: opacity .35s;
+    position: relative;
+}
+.w-button {
+    line-height: inherit;
+    text-decoration: none;
+    display: inline-block;
+    width: 220px;
+    margin: 10px;
+}
+
+.icon {
+    position: relative;
+    text-align: center;
+    z-index: 1;
+    margin-bottom: 80px;
+    margin-top: 70px;
+}
+
+.icon img {
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.icon h3 {
+    font-size: 33px;
+    margin-bottom: 10px;
+    color: #005259;
+    font-weight: 700;
+}
+
+.icon h6 {
+    font-size: 1rem;
+    margin-bottom: 0;
+    opacity: 0.7;
+}
+
+.statistics, .services, .partners {
+    margin: 40px;
+}
+
+.mt-70 {
+    padding: 90px;
+    background-color: #e5f3f4;
+}
+
+.row {
+    align-items: space-between;
+    margin:40px 90px;
+}
+
+.col {
+    padding: 10px;
+    margin: 5px;
+    justify-items: center;
+    text-align: center;
+}
+
+.col img {
+    opacity: 0.8;
+    cursor: pointer;
+    height: 160px;
+    width: 160px;
+    margin: 3px;
+}
+
+.col img:hover {
+    opacity: 1;
+} */

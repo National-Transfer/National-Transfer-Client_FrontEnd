@@ -1,0 +1,19 @@
+<div class="partners">
+    <div class="heading-large">
+        <h2>They trust us !</h2>
+    </div>
+    <blockquote class="block-quote quote-turquoise">
+        Since its creation, Cash Plus has formed several long-lasting partnerships with market operators, which today make up its strength and reputation.
+        A precious trust that we display with pride.
+    </blockquote>
+    <div class="gallery">
+        <div class="row">
+            @for (img of images; track img.id) {
+                <section class="col">
+                    <img src="{{img.src}}" alt="Nature" onclick="myFunction(this);">
+                    <h6>{{img.name}}</h6>
+                </section>
+            }
+        </div>
+    </div>
+</div>

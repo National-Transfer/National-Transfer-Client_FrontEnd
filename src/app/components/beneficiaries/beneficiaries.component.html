@@ -1,0 +1,151 @@
+<div class="beneficiaries">
+    <div class="container subcontainer" id="main-container">
+        <h1 align="center" class="center">
+            Your Beneficiaries
+        </h1>
+        <div class="header">
+            <div>
+                <button type="button" class="btn button-secondary w-button" data-bs-toggle="modal" data-bs-target="#addBenefModal">
+                    + Add Beneficiary
+                </button>
+            </div>
+            <form class="d-flex">
+                <input #myInput class="form-control me-1" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn button-secondary w-button" type="submit" (click)="doSearch(myInput.value)">
+                   Search
+                </button>
+            </form>
+        </div>
+        <div class="table-agents">
+            <div class="table" style="background-color: #0d646c; color: white">
+                <div class="item1" >
+                    <b>Id</b>
+                </div>
+                <div class="item">
+                    <b>Username</b>
+                </div>
+                <div class="item">
+                    <b>Name</b>
+                </div>
+                <div class="item">
+                    <b>Email</b>
+                </div>
+                <div class="item">
+                    <b>Created At</b>
+                </div>
+                <div class="item1">
+                    <b>Delete</b>
+                </div>
+            </div>
+            <div class="table">
+                <div class="item1">id</div>
+                <div class="item">username</div>
+                <div class="item">firstName lastName</div>
+                <div class="item" style="font-weight:normal">email</div>
+                <div class="item" style="font-weight:bold">date</div>
+                <div class="item1"><a >
+                    <fa-icon id="delete"
+                        [icon]="faTrash" data-bs-toggle="modal" data-bs-target="#deleteModal"></fa-icon>
+                </a></div>
+            </div>
+            <div class="table">
+                <div class="item1">id</div>
+                <div class="item">username</div>
+                <div class="item">firstName lastName</div>
+                <div class="item" style="font-weight:normal">email</div>
+                <div class="item" style="font-weight:bold">date</div>
+                <div class="item1"><a ><fa-icon id="delete"
+                    [icon]="faTrash" data-bs-toggle="modal" data-bs-target="#deleteModal"></fa-icon></a></div>
+            </div>
+            <div class="table">
+                <div class="item1">id</div>
+                <div class="item">username</div>
+                <div class="item">firstName lastName</div>
+                <div class="item" style="font-weight:normal">email</div>
+                <div class="item" style="font-weight:bold">date</div>
+                <div class="item1"><a ><fa-icon id="delete"
+                    [icon]="faTrash" data-bs-toggle="modal" data-bs-target="#deleteModal"></fa-icon></a></div>
+            </div>
+            <div class="table">
+                <div class="item1">id</div>
+                <div class="item">username</div>
+                <div class="item">firstName lastName</div>
+                <div class="item" style="font-weight:normal">email</div>
+                <div class="item" style="font-weight:bold">date</div>
+                <div class="item1"><a ><fa-icon id="delete"
+                    [icon]="faTrash"></fa-icon></a></div>
+            </div>
+            <div class="table">
+                <div class="item1">id</div>
+                <div class="item">username</div>
+                <div class="item">firstName lastName</div>
+                <div class="item" style="font-weight:normal">email</div>
+                <div class="item" style="font-weight:bold">date</div>
+                <div class="item1"><a ><fa-icon id="delete"
+                    [icon]="faTrash"></fa-icon></a></div>
+            </div>
+            <div class="table">
+                <div class="item1">id</div>
+                <div class="item">username</div>
+                <div class="item">firstName lastName</div>
+                <div class="item" style="font-weight:normal">email</div>
+                <div class="item" style="font-weight:bold">date</div>
+                <div class="item1"><a ><fa-icon id="delete"
+                    [icon]="faTrash"></fa-icon></a></div>
+            </div>
+        </div>
+        <!-- add form modal -->
+        <div class="modal" tabindex="-1" role="dialog" id="addBenefModal" data-bs-backdrop="static" data-bs-keyboard="false"
+             aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="logo">
+                            <a href="#">Logo</a>
+                        </div>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="text-center" id="addBenefModal-form ">
+
+                            <h3 align="center" class="center2" >
+                                Add New Beneficiary
+                            </h3>
+                            <div class="form">
+                                <input type="text" class="form-control" placeholder="FirstName" ngModel name="firstName" required />
+                                <input type="text" class="form-control" placeholder="LasttName" ngModel name="lasttName" required />
+                                <input type="tel" class="form-control" placeholder="Phone" ngModel name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required />
+                                <button color="info" class="btn button-secondary w-button" type="submit" data-bs-dismiss="modal">
+                                    Add
+                                </button>
+                            </div>
+                            <button type="button " data-bs-dismiss="modal" aria-label="Close" class="btn button-secondary w-button" style="width: min-content;">Cancel</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Delete Modal -->
+            <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog bg-light" style="border-radius:10px">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Delete Agent</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            You are about to delete Beneficiary <strong>username</strong>
+                            <br>
+                            Are you sure ?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-danger" 
+                                data-bs-dismiss="modal">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
