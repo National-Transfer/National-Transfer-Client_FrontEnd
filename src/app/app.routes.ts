@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
-import { HomePageComponent } from './home-page/home-page.component';
-import { NavigationComponent } from './navigation/navigation.component';
-import { BeneficiariesComponent } from './beneficiaries/beneficiaries.component';
-import { ProfileComponent } from './profile/profile.component';
-import { RecentTransfersComponent } from './recent-transfers/recent-transfers.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { BeneficiariesComponent } from './components/beneficiaries/beneficiaries.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { RecentTransfersComponent } from './components/recent-transfers/recent-transfers.component';
 
 export const routes: Routes = [
     {
