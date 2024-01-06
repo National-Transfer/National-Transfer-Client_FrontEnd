@@ -12,7 +12,5 @@ const httpOptions = {
 })
 export class TransferService {
 
-  transferService = inject(TransferService);
-
   // restituerTransferByClient(request);
 }

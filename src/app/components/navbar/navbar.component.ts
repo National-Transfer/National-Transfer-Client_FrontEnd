@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { OKTA_AUTH } from '@okta/okta-angular';
 
 @Component({
   selector: 'app-navbar',
@@ -12,9 +13,9 @@ export class NavbarComponent {
 
   private router = inject(Router);
   private route = inject(ActivatedRoute);
-
+  private oktaAuth = inject(OKTA_AUTH);
   home() {
-    this.router.navigate(['home'], { relativeTo: this.route });
+    this.router.navigate([''], { relativeTo: this.route });
 
   }
 
@@ -30,7 +31,8 @@ export class NavbarComponent {
     this.router.navigate(['recent-transfers'], { relativeTo: this.route });
   }
 
-  logout() {
-
+  async logout(): Promise<void>{
+     await this.oktaAuth.signOut();
   }
+
 }

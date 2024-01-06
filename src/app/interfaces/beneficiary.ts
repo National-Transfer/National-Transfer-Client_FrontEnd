@@ -5,5 +5,5 @@ export interface Beneficiary {
     firstName  : string;
     lastName : string;
     phoneNumber : string;
-    client: Client;
+    client : Client;
 }

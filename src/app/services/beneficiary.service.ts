@@ -22,7 +22,12 @@ export class BeneficiaryService {
     return this.http.get<Beneficiary[]>(`${this.URL}/client/${id}`, httpOptions);
   }
 
-  deleteBeneficiary(id: string): Observable<string> {
-    return this.http.delete<string>(`${this.URL}/${id}`, httpOptions);
+  deleteBeneficiary(id: string): Observable<any> {
+    return this.http.delete<any>(`${this.URL}/${id}`, httpOptions);
   }
+
+  addBeneficiary(clientId : string , beneficiary: Beneficiary): Observable<Beneficiary> {
+    return this.http.post<Beneficiary>(`${this.URL}/client/${clientId}`, beneficiary, httpOptions);
+  }
+
 }
