@@ -31,8 +31,16 @@ export class NavbarComponent {
     this.router.navigate(['recent-transfers'], { relativeTo: this.route });
   }
 
+  emissionTransfer() {
+    this.router.navigate(['send-money'], { relativeTo: this.route });
+  }
+
   async logout(): Promise<void>{
      await this.oktaAuth.signOut();
+  }
+
+  serveTransfer() {
+    this.router.navigate(['serve-transfer'], { relativeTo: this.route });
   }
 
 }

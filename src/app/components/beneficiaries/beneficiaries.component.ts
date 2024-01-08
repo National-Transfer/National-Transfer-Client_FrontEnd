@@ -3,6 +3,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faPenToSquare, faRotateLeft, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { Beneficiary } from '../../interfaces/beneficiary';
 import { BeneficiaryService } from '../../services/beneficiary.service';
+import { Observable, filter, map } from 'rxjs';
+import { OKTA_AUTH, OktaAuthStateService } from '@okta/okta-angular';
+import { AuthState } from '@okta/okta-auth-js';
 
 @Component({
   selector: 'app-beneficiaries',
@@ -15,19 +18,36 @@ export class BeneficiariesComponent {
 
   beneficiaries?: Beneficiary[];
   
+  oktaAuth = inject(OKTA_AUTH);
+  oktaAuthStateService = inject(OktaAuthStateService);
+
+   userId$!: Observable<any>;
   beneficiaryService = inject(BeneficiaryService);
 
   faTrash = faTrash;
   faPenToSquare = faPenToSquare;
   faRotateLeft = faRotateLeft;
 
+
+  id !: string;
   doSearch(value: string) {
     
   }
 
   ngOnInit(): void {
-    const id = '';
-    this.getBeneficiaries(id);
+     
+  // this.userId$$ = oktaAuthStateService.authState$.pipe(
+  //   filter((authState: AuthState) => !!authState && !!authState.isAuthenticated),
+  //   map((authState: AuthState) => authState.accessToken?.claims.userId ?? '')
+  // );
+
+  // this.userId$$.subscribe((idFromToken: string) => {
+  //   this.id = idFromToken
+  
+  // });
+
+
+    this.getBeneficiaries(this.id);
   }
 
   getBeneficiaries(id: string): void {
