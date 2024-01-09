@@ -15,16 +15,10 @@ export const APP_ROUTES: Route[] = [
                 path: '', component: HomePageComponent
             },
             {
-                path: 'beneficiaries', component: BeneficiariesComponent
-            },
-            {
                 path: 'profile', component: ProfileComponent
             },
             {
                 path: 'recent-transfers', component: RecentTransfersComponent
-            },
-            {
-                path: 'serve-transfer', component: ServeTransferComponent
             },
             {
                 path: 'issue-transfer', component: IssueTransferWalletComponent

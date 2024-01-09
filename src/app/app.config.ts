@@ -5,7 +5,7 @@ import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
 import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
 import OktaAuth from '@okta/okta-auth-js';
-import { environment } from '../environments/environment';
+import { environment } from '../environments/environment.development';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { OktaAuthModule } from '@okta/okta-angular';
 import { authInterceptor } from './auth/auth.interceptor';

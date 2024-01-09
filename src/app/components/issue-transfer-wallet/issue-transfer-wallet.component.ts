@@ -14,7 +14,7 @@ import { ValidateTransferRequest } from '../../interfaces/validateTransferReques
 import { NgOtpInputModule } from 'ng-otp-input';
 import { TransferService } from '../../services/transfer.service';
 import { BeneficiaryService } from '../../services/beneficiary.service';
-
+import { ActivatedRoute, Router } from '@angular/router';
 
 interface Claim {
   claim: string;
@@ -31,6 +31,9 @@ interface Claim {
 })
 export class IssueTransferWalletComponent implements OnInit {
 
+  private router = inject(Router);
+  private route = inject(ActivatedRoute);
+
   private clientService: ClientService = inject(ClientService);
 
   private transferService = inject(TransferService);
@@ -41,7 +44,6 @@ export class IssueTransferWalletComponent implements OnInit {
 
   private benificiaryService = inject(BeneficiaryService);
   constructor(@Inject(OKTA_AUTH) public oktaAuth: OktaAuth) { }
-
 
   transferToServe !: Transfer;
 
@@ -215,5 +217,9 @@ export class IssueTransferWalletComponent implements OnInit {
     container?.appendChild(button);
     button.click();
   
+  }
+
+  home() {
+    this.router.navigate([''], { relativeTo: this.route });
   }
 }

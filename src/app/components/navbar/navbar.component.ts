@@ -19,10 +19,6 @@ export class NavbarComponent {
 
   }
 
-  beneficiaries() {
-    this.router.navigate(['beneficiaries'], { relativeTo: this.route });
-  }
-
   profile() {
     this.router.navigate(['profile'], { relativeTo: this.route });
   }
@@ -31,17 +27,12 @@ export class NavbarComponent {
     this.router.navigate(['recent-transfers'], { relativeTo: this.route });
   }
 
-  emissionTransfer() {
+  issueTransfer() {
     this.router.navigate(['issue-transfer'], { relativeTo: this.route });
   }
 
   async logout(): Promise<void>{
      await this.oktaAuth.signOut();
   }
-
-  serveTransfer() {
-    this.router.navigate(['emission-Transfer'], { relativeTo: this.route });
-  }
-
 
 }
