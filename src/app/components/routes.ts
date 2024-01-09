@@ -4,6 +4,7 @@ import { HomePageComponent } from "./home-page/home-page.component";
 import { NavigationComponent } from "./navigation/navigation.component";
 import { ProfileComponent } from "./profile/profile.component";
 import { RecentTransfersComponent } from "./recent-transfers/recent-transfers.component";
+import { ServeTransferComponent } from "./serve-transfer/serve-transfer.component";
 
 
 export const APP_ROUTES: Route[] = [
@@ -20,6 +21,9 @@ export const APP_ROUTES: Route[] = [
             },
             {
                 path: 'recent-transfers', component: RecentTransfersComponent
+            },
+            {
+                path: 'serve-transfer', component: ServeTransferComponent
             }
         ]
     } 
