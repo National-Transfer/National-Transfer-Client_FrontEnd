@@ -3,9 +3,7 @@ import { FormsModule, NgForm } from '@angular/forms';
 import { Benificiary } from '../../interfaces/Benificiary';
 import { ClientResponse } from '../../interfaces/ClientResponse';
 import { Transfer } from '../../interfaces/transfer';
-import { BenificiaryService } from '../../services/benificiary.service';
 import { ClientService } from '../../services/client.service';
-import { TransferService } from '../../services/transfers.service';
 import { TransferAmountRequest } from '../../interfaces/transferAmountRequest';
 import { OKTA_AUTH } from '@okta/okta-angular';
 import OktaAuth from '@okta/okta-auth-js';
@@ -14,6 +12,8 @@ import { BehaviorSubject } from 'rxjs';
 import { IssueTransferRequest } from '../../interfaces/issueTransferService';
 import { ValidateTransferRequest } from '../../interfaces/validateTransferRequest';
 import { NgOtpInputModule } from 'ng-otp-input';
+import { TransferService } from '../../services/transfer.service';
+import { BeneficiaryService } from '../../services/beneficiary.service';
 
 
 interface Claim {
@@ -39,7 +39,7 @@ export class IssueTransferWalletComponent implements OnInit {
 
   benificiairesForClient !: Benificiary[];
 
-  private benificiaryService = inject(BenificiaryService);
+  private benificiaryService = inject(BeneficiaryService);
   constructor(@Inject(OKTA_AUTH) public oktaAuth: OktaAuth) { }
 
 
@@ -119,13 +119,13 @@ export class IssueTransferWalletComponent implements OnInit {
   }
 
 
-  getClient(client: NgForm) {
-    console.log(" cin " +  JSON.stringify(client.value));
+  // getClient(client: NgForm) {
+  //   console.log(" cin " +  JSON.stringify(client.value));
 
-    this.clientService.getClientByCin$(client.value.identityNumber).subscribe(response => {
-      this.client = response;
-    });
-  }
+  //   this.clientService.getClientByCin$(client.value.identityNumber).subscribe(response => {
+  //     this.client = response;
+  //   });
+  // }
 
   sendTransferAmountRequest(transferAmount: NgForm) {
     console.log(JSON.stringify(transferAmount.value));
@@ -145,14 +145,14 @@ export class IssueTransferWalletComponent implements OnInit {
   }
 
 
-  getAllBeneficiariesForClient() {
-    this.benificiaryService.getAllBeneficiariesForClient$(this.client.id as string).subscribe(response => {
-      this.dataSubject.next(response);
-      this.benificiairesForClient = response
-    })
-    console.log(this.benificiairesForClient);
+  // getAllBeneficiariesForClient() {
+  //   this.benificiaryService.getAllBeneficiariesForClient$(this.client.id as string).subscribe(response => {
+  //     this.dataSubject.next(response);
+  //     this.benificiairesForClient = response
+  //   })
+  //   console.log(this.benificiairesForClient);
     
-  }
+  // }
 
   newBenificiary !: Benificiary;
 

@@ -40,7 +40,8 @@ export class NavbarComponent {
   }
 
   serveTransfer() {
-    this.router.navigate(['serve-transfer'], { relativeTo: this.route });
+    this.router.navigate(['emission-Transfer'], { relativeTo: this.route });
   }
+
 
 }
