@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Injectable, inject } from '@angular/core';
-import { environment } from '../../environments/environment.development';
+import { Injectable, inject} from '@angular/core';
+import { environment } from '../../environments/environment';
 import { Observable, tap, catchError, of } from 'rxjs';
 import { Transfer } from '../interfaces/transfer';
 import { IssueTransferRequest } from '../interfaces/issueTransferService';
@@ -10,6 +10,7 @@ import { ServeTransferRequest } from '../interfaces/serveTransferRequest';
 import { TransferAmountRequest } from '../interfaces/transferAmountRequest';
 import { TransferAmountResponse } from '../interfaces/transferAmountResponse';
 import { ValidateTransferRequest } from '../interfaces/validateTransferRequest';
+
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -23,7 +24,7 @@ const httpOptions = {
 export class TransferService {
 
   private http = inject(HttpClient);
-  private readonly apiUrl : string =  environment.redirectUri +'/api/v1/transfer';
+  private readonly apiUrl : string =  environment.redirectUri +'/transfer-service/api/v1/transfer';
 
   getAllTransfersForClient$ =(id : string)  => <Observable<Transfer[]>>
     this.http.get<Transfer[]>(`${this.apiUrl}/TransfersForClient/${id}`)
