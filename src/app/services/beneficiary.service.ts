@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Beneficiary } from '../interfaces/beneficiary';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment.development';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -14,7 +15,7 @@ const httpOptions = {
 })
 export class BeneficiaryService {
 
-  private readonly URL: string = 'http://localhost:8080/api/beneficiaries';
+  private readonly URL: string =   environment.redirectUri + '/api/beneficiaries';
 
   constructor(private http: HttpClient) {}
 

@@ -1,6 +1,4 @@
-import { Account } from "./account";
-
-export interface Client {
+export interface Prospect {
     id ?:string;
     title ?:string;
     firstName :string;
@@ -8,13 +6,10 @@ export interface Client {
     countryOfIssue :string;
     identityNumber :string;
     dateOfBirth :Date;
-    address :string;
-    identityValidity: Date;
     profession : string;
     nationality : string;
     countryOfAddress :string;
     city : string;
     phoneNumber : string;
     email :string;
-    accountResponseDto ?: Account;
 }

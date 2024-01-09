@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Observable, tap } from 'rxjs';
 import { Client } from '../interfaces/client';
+import { environment } from '../../environments/environment.development';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -14,7 +15,7 @@ const httpOptions = {
 })
 export class ClientService {
   
-  private readonly URL : string = 'http://localhost:8080/api/clients';
+  private readonly URL : string =  environment.redirectUri +'/api/clients';
 
   private http : HttpClient =  inject(HttpClient);
 
