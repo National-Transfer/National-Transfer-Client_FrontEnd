@@ -1,11 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faPenToSquare, faRotateLeft, faTrash } from '@fortawesome/free-solid-svg-icons';
-import { Beneficiary } from '../../interfaces/beneficiary';
 import { BeneficiaryService } from '../../services/beneficiary.service';
 import { Observable, filter, map } from 'rxjs';
 import { OKTA_AUTH, OktaAuthStateService } from '@okta/okta-angular';
 import { AuthState } from '@okta/okta-auth-js';
+import { Benificiary } from '../../interfaces/Benificiary';
 
 @Component({
   selector: 'app-beneficiaries',
@@ -16,7 +16,7 @@ import { AuthState } from '@okta/okta-auth-js';
 })
 export class BeneficiariesComponent {
 
-  beneficiaries?: Beneficiary[];
+  beneficiaries!: Benificiary[];
   
   oktaAuth = inject(OKTA_AUTH);
   oktaAuthStateService = inject(OktaAuthStateService);
@@ -51,9 +51,9 @@ export class BeneficiariesComponent {
   }
 
   getBeneficiaries(id: string): void {
-    this.beneficiaryService.getBeneficiariesForClient(id)
+    this.beneficiaryService.getAllBeneficiariesForClient$(id)
       .subscribe(
-        (data: Beneficiary[]) => {
+        (data) => {
           this.beneficiaries = data;
           console.log('Client beneficiaries:', this.beneficiaries);
         },

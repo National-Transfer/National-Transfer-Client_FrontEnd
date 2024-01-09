@@ -1,7 +1,8 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Beneficiary } from '../interfaces/beneficiary';
-import { Observable } from 'rxjs';
+import { Injectable, inject } from '@angular/core';
+import { Observable, catchError, of, tap } from 'rxjs';
+import { environment } from '../../environments/environment';
+import { Benificiary } from '../interfaces/Benificiary';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -14,20 +15,41 @@ const httpOptions = {
 })
 export class BeneficiaryService {
 
-  private readonly URL: string = 'http://localhost:8080/api/beneficiaries';
+  private http: HttpClient = inject(HttpClient);
 
-  constructor(private http: HttpClient) {}
+  private readonly apiUrl: string = environment.redirectUri +'/kyc-service/api/v1/beneficiaries';
+  
+  getBeneficiary$ = (id : string) => <Observable<Benificiary>>
+  this.http.get<Benificiary>(`${this.apiUrl}/${id}`)
+    .pipe(
+      tap(console.log),
+      catchError(() => {
+        return of('error getting benifiary')
+      })
+    );
 
-  getBeneficiariesForClient(id: string): Observable<Beneficiary[]> {
-    return this.http.get<Beneficiary[]>(`${this.URL}/client/${id}`, httpOptions);
-  }
+  getAllBeneficiariesForClient$ = (id : string) => <Observable<Benificiary[]>>
+      this.http.get<Benificiary[]>(`${this.apiUrl}/client/${id}`)
+      .pipe(
+        tap(console.log),
+        catchError(() => {
+          return of('error getting benifiaries')
+        })
+      );
+
+  
+  saveBeneficiaryForClient$ = (id : string, benificiary : Benificiary ) => <Observable<Benificiary>>
+        this.http.post<Benificiary>(`${this.apiUrl}/client/${id}`, benificiary, httpOptions )
+        .pipe(
+          tap(console.log),
+          catchError(() => {
+            return of('error saving benificiary')
+          })
+        );
 
   deleteBeneficiary(id: string): Observable<any> {
-    return this.http.delete<any>(`${this.URL}/${id}`, httpOptions);
+    return this.http.delete<any>(`${this.apiUrl}/${id}`, httpOptions);
   }
 
-  addBeneficiary(clientId : string , beneficiary: Beneficiary): Observable<Beneficiary> {
-    return this.http.post<Beneficiary>(`${this.URL}/client/${clientId}`, beneficiary, httpOptions);
-  }
 
 }

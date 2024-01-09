@@ -1,17 +1,15 @@
 export interface Transfer {
-    id: string;
-    reference: string;
-    transferAmount: BigInteger;
-    transferType: string;
+    id?: string;
+    reference?: string;
+    transferAmount : number;
+    transferType : string;
     transferReason: string;
-    transferState: string;
-    transferDate: Date;
-    expirationDate: Date;
-    updatedAt: Date;
-    agentId: string;
-    clientId: string;
-    recipientId: string;
-    transferNotification: Boolean;
-    otpCode: string;
-    pinCode: string;
+    transferState?:string;
+    commissionType:string;
+    expirationDate?:Date;
+    agentId:string;
+    clientId:string;
+    recipientId:string;
+    transferNotification:boolean;
+    otpCode?:string;
 }
