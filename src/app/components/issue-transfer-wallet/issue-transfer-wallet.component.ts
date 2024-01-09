@@ -60,6 +60,7 @@ export class IssueTransferWalletComponent implements OnInit {
     const userClaims = await this.oktaAuth.getUser();
     this.claims = Object.entries(userClaims).map(entry => ({ claim: entry[0], value: entry[1] }));
     this.setupFormNavigation();
+    this.getAllBeneficiariesForClient();
   }
 
   navigateToFormStep(stepNumber: number): void {
@@ -145,14 +146,14 @@ export class IssueTransferWalletComponent implements OnInit {
   }
 
 
-  // getAllBeneficiariesForClient() {
-  //   this.benificiaryService.getAllBeneficiariesForClient$(this.client.id as string).subscribe(response => {
-  //     this.dataSubject.next(response);
-  //     this.benificiairesForClient = response
-  //   })
-  //   console.log(this.benificiairesForClient);
+  getAllBeneficiariesForClient() {
+    this.benificiaryService.getAllBeneficiariesForClient$(this.client.id as string).subscribe(response => {
+      this.dataSubject.next(response);
+      this.benificiairesForClient = response
+    })
+    console.log(this.benificiairesForClient);
     
-  // }
+  }
 
   newBenificiary !: Benificiary;
 

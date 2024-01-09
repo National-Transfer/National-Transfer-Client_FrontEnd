@@ -32,7 +32,7 @@ export class NavbarComponent {
   }
 
   emissionTransfer() {
-    this.router.navigate(['send-money'], { relativeTo: this.route });
+    this.router.navigate(['issue-transfer'], { relativeTo: this.route });
   }
 
   async logout(): Promise<void>{

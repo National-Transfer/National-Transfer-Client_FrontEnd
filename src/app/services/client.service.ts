@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Observable, tap } from 'rxjs';
 import { Client } from '../interfaces/client';
-import { environment } from '../../environments/environment.development';
+import { environment } from '../../environments/environment';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -15,7 +15,7 @@ const httpOptions = {
 })
 export class ClientService {
   
-  private readonly URL : string =  environment.redirectUri +'/api/clients';
+  private readonly URL : string =  environment.redirectUri +'/kyc-service/api/clients';
 
   private http : HttpClient =  inject(HttpClient);
 
