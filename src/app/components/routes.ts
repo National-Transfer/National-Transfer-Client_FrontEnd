@@ -27,7 +27,7 @@ export const APP_ROUTES: Route[] = [
                 path: 'serve-transfer', component: ServeTransferComponent
             },
             {
-                path: 'emission-Transfer', component: IssueTransferWalletComponent
+                path: 'issue-transfer', component: IssueTransferWalletComponent
             }
         ]
     } 
